@@ -44,6 +44,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtNewKey = new System.Windows.Forms.TextBox();
             this.btnChangeMasterKey = new System.Windows.Forms.Button();
+            this.btnShowPassword = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -192,11 +193,22 @@
             this.btnChangeMasterKey.UseVisualStyleBackColor = true;
             this.btnChangeMasterKey.Click += new System.EventHandler(this.btnChangeMasterKey_Click);
             // 
+            // btnShowPassword
+            // 
+            this.btnShowPassword.Location = new System.Drawing.Point(418, 221);
+            this.btnShowPassword.Name = "btnShowPassword";
+            this.btnShowPassword.Size = new System.Drawing.Size(36, 29);
+            this.btnShowPassword.TabIndex = 11;
+            this.btnShowPassword.Text = "👁️";
+            this.btnShowPassword.UseVisualStyleBackColor = true;
+            this.btnShowPassword.Click += new System.EventHandler(this.btnShowPassword_Click);
+            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnShowPassword);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnGenerate);
@@ -236,5 +248,6 @@
         private System.Windows.Forms.TextBox txtNewKey;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtCurrentKey;
+        private System.Windows.Forms.Button btnShowPassword;
     }
 }

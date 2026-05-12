@@ -131,5 +131,22 @@ namespace SecureKey_Vault
                 }
             }
         }
+
+        private void btnShowPassword_Click(object sender, EventArgs e)
+        {
+            // Agar password chupa hua hai (*)
+            if (txtPassword.PasswordChar == '*')
+            {
+                // Password show kar do (\0 ka matlab null/khali hota hai, jo star ko hata deta hai)
+                txtPassword.PasswordChar = '\0';
+                btnShowPassword.Text = "Hide"; // Button ka text badal do
+            }
+            else
+            {
+                // Agar password pehle se nazar aa raha hai, to usay wapas chupa do
+                txtPassword.PasswordChar = '*';
+                btnShowPassword.Text = "Show"; // Button ka text wapas original kar do
+            }
+        }
     }
 }
