@@ -92,6 +92,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(220, 221);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(192, 26);
             this.txtPassword.TabIndex = 5;
             // 
@@ -103,6 +104,7 @@
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save Password";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 

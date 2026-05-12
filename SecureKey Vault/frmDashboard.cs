@@ -1,13 +1,14 @@
-﻿using System;
+﻿using SecureKeyVault;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace SecureKey_Vault
 {
@@ -74,6 +75,54 @@ namespace SecureKey_Vault
                             // Agar purana password galat dala
                             MessageBox.Show("Current Master Key is incorrect!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Database Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            // Aapki database ki connection string
+            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SecureKeyVaultDB;Integrated Security=True";
+
+            // Check karna ke koi dabba khali to nahi hai
+            if (string.IsNullOrEmpty(txtPlatform.Text) || string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrEmpty(txtPassword.Text))
+            {
+                MessageBox.Show("Please fill all fields (Platform, Username, and Password)!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Yahan hum apna banaya hua SecurityHelper use karenge Password ko Encrypt karne ke liye
+            string encryptedPassword = SecurityHelper.EncryptBase64(txtPassword.Text);
+
+            // Database me Insert (Save) karne ka amal
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+
+                    // Database me data bhejny ki query
+                    string insertQuery = "INSERT INTO Vault_Data (PlatformName, Username, SavedPassword) VALUES (@platform, @username, @password)";
+
+                    using (SqlCommand cmd = new SqlCommand(insertQuery, con))
+                    {
+                        cmd.Parameters.AddWithValue("@platform", txtPlatform.Text);
+                        cmd.Parameters.AddWithValue("@username", txtUsername.Text);
+                        cmd.Parameters.AddWithValue("@password", encryptedPassword); // Asal nahi, Encrypt hua password bhej rahe hain
+
+                        cmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Credential Saved Securely!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Save hone ke baad dabbe khud khali ho jayein taake naya data likha ja sake
+                        txtPlatform.Clear();
+                        txtUsername.Clear();
+                        txtPassword.Clear();
                     }
                 }
                 catch (Exception ex)
