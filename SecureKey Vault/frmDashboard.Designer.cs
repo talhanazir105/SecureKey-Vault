@@ -46,6 +46,8 @@
             this.btnChangeMasterKey = new System.Windows.Forms.Button();
             this.btnShowPassword = new System.Windows.Forms.Button();
             this.btnRead = new System.Windows.Forms.Button();
+            this.lblStrengthText = new System.Windows.Forms.Label();
+            this.pbStrength = new System.Windows.Forms.ProgressBar();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,6 +99,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(192, 26);
             this.txtPassword.TabIndex = 5;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // btnSave
             // 
@@ -213,11 +216,29 @@
             this.btnRead.Text = "Read/View";
             this.btnRead.UseVisualStyleBackColor = true;
             // 
+            // lblStrengthText
+            // 
+            this.lblStrengthText.AutoSize = true;
+            this.lblStrengthText.Location = new System.Drawing.Point(113, 262);
+            this.lblStrengthText.Name = "lblStrengthText";
+            this.lblStrengthText.Size = new System.Drawing.Size(0, 20);
+            this.lblStrengthText.TabIndex = 13;
+            this.lblStrengthText.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // pbStrength
+            // 
+            this.pbStrength.Location = new System.Drawing.Point(221, 262);
+            this.pbStrength.Name = "pbStrength";
+            this.pbStrength.Size = new System.Drawing.Size(191, 23);
+            this.pbStrength.TabIndex = 14;
+            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pbStrength);
+            this.Controls.Add(this.lblStrengthText);
             this.Controls.Add(this.btnRead);
             this.Controls.Add(this.btnShowPassword);
             this.Controls.Add(this.groupBox1);
@@ -261,5 +282,7 @@
         private System.Windows.Forms.TextBox txtCurrentKey;
         private System.Windows.Forms.Button btnShowPassword;
         private System.Windows.Forms.Button btnRead;
+        private System.Windows.Forms.Label lblStrengthText;
+        private System.Windows.Forms.ProgressBar pbStrength;
     }
 }

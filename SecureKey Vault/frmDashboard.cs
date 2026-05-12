@@ -148,5 +148,61 @@ namespace SecureKey_Vault
                 btnShowPassword.Text = "Show"; // Button ka text wapas original kar do
             }
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            int score = 0;
+            string pwd = txtPassword.Text;
+
+            // Agar password khali hai to meter 0 kar do
+            if (string.IsNullOrEmpty(pwd))
+            {
+                pbStrength.Value = 0;
+                lblStrengthText.Text = "";
+                return;
+            }
+
+            // Length check (Kam se kam 8 haroof)
+            if (pwd.Length >= 8) score += 25;
+
+            // ABCD (Capital letters) check
+            if (System.Text.RegularExpressions.Regex.IsMatch(pwd, "[A-Z]")) score += 25;
+
+            // 1234 (Numbers) check
+            if (System.Text.RegularExpressions.Regex.IsMatch(pwd, "[0-9]")) score += 25;
+
+            // Special characters (!@#$) check
+            if (System.Text.RegularExpressions.Regex.IsMatch(pwd, "[^a-zA-Z0-9]")) score += 25;
+
+            // Meter ki line update karna
+            pbStrength.Value = score;
+
+            // Color aur Text change karna (Proposal ki requirement )
+            if (score <= 25)
+            {
+                lblStrengthText.Text = "Weak";
+                lblStrengthText.ForeColor = System.Drawing.Color.Red;
+            }
+            else if (score == 50)
+            {
+                lblStrengthText.Text = "Fair";
+                lblStrengthText.ForeColor = System.Drawing.Color.Orange;
+            }
+            else if (score == 75)
+            {
+                lblStrengthText.Text = "Good";
+                lblStrengthText.ForeColor = System.Drawing.Color.Blue;
+            }
+            else if (score == 100)
+            {
+                lblStrengthText.Text = "Strong";
+                lblStrengthText.ForeColor = System.Drawing.Color.Green;
+            }
+        }
     }
 }
