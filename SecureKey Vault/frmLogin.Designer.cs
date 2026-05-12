@@ -49,6 +49,7 @@
             this.txtMasterKey.PasswordChar = '*';
             this.txtMasterKey.Size = new System.Drawing.Size(188, 26);
             this.txtMasterKey.TabIndex = 1;
+
             // 
             // btnLogin
             // 

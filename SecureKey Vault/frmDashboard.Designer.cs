@@ -39,11 +39,11 @@
             this.btnGenerate = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtCurrentKey = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtNewKey = new System.Windows.Forms.TextBox();
             this.btnChangeMasterKey = new System.Windows.Forms.Button();
+            this.txtNewKey = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtCurrentKey = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnShowPassword = new System.Windows.Forms.Button();
             this.btnRead = new System.Windows.Forms.Button();
             this.lblStrengthText = new System.Windows.Forms.Label();
@@ -153,22 +153,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Security Settings";
             // 
-            // label4
+            // btnChangeMasterKey
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(51, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(149, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Current Master Key:";
+            this.btnChangeMasterKey.Location = new System.Drawing.Point(37, 158);
+            this.btnChangeMasterKey.Name = "btnChangeMasterKey";
+            this.btnChangeMasterKey.Size = new System.Drawing.Size(178, 41);
+            this.btnChangeMasterKey.TabIndex = 4;
+            this.btnChangeMasterKey.Text = "Update Master Key";
+            this.btnChangeMasterKey.UseVisualStyleBackColor = true;
+            this.btnChangeMasterKey.Click += new System.EventHandler(this.btnChangeMasterKey_Click);
             // 
-            // txtCurrentKey
+            // txtNewKey
             // 
-            this.txtCurrentKey.Location = new System.Drawing.Point(55, 50);
-            this.txtCurrentKey.Name = "txtCurrentKey";
-            this.txtCurrentKey.PasswordChar = '*';
-            this.txtCurrentKey.Size = new System.Drawing.Size(145, 26);
-            this.txtCurrentKey.TabIndex = 1;
+            this.txtNewKey.Location = new System.Drawing.Point(55, 115);
+            this.txtNewKey.Name = "txtNewKey";
+            this.txtNewKey.PasswordChar = '*';
+            this.txtNewKey.Size = new System.Drawing.Size(145, 26);
+            this.txtNewKey.TabIndex = 3;
             // 
             // label5
             // 
@@ -179,23 +180,22 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "New Master Key:";
             // 
-            // txtNewKey
+            // txtCurrentKey
             // 
-            this.txtNewKey.Location = new System.Drawing.Point(55, 115);
-            this.txtNewKey.Name = "txtNewKey";
-            this.txtNewKey.PasswordChar = '*';
-            this.txtNewKey.Size = new System.Drawing.Size(145, 26);
-            this.txtNewKey.TabIndex = 3;
+            this.txtCurrentKey.Location = new System.Drawing.Point(55, 50);
+            this.txtCurrentKey.Name = "txtCurrentKey";
+            this.txtCurrentKey.PasswordChar = '*';
+            this.txtCurrentKey.Size = new System.Drawing.Size(145, 26);
+            this.txtCurrentKey.TabIndex = 1;
             // 
-            // btnChangeMasterKey
+            // label4
             // 
-            this.btnChangeMasterKey.Location = new System.Drawing.Point(37, 158);
-            this.btnChangeMasterKey.Name = "btnChangeMasterKey";
-            this.btnChangeMasterKey.Size = new System.Drawing.Size(178, 41);
-            this.btnChangeMasterKey.TabIndex = 4;
-            this.btnChangeMasterKey.Text = "Update Master Key";
-            this.btnChangeMasterKey.UseVisualStyleBackColor = true;
-            this.btnChangeMasterKey.Click += new System.EventHandler(this.btnChangeMasterKey_Click);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(51, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(149, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Current Master Key:";
             // 
             // btnShowPassword
             // 
@@ -219,7 +219,7 @@
             // lblStrengthText
             // 
             this.lblStrengthText.AutoSize = true;
-            this.lblStrengthText.Location = new System.Drawing.Point(113, 262);
+            this.lblStrengthText.Location = new System.Drawing.Point(169, 252);
             this.lblStrengthText.Name = "lblStrengthText";
             this.lblStrengthText.Size = new System.Drawing.Size(0, 20);
             this.lblStrengthText.TabIndex = 13;
@@ -229,7 +229,7 @@
             // 
             this.pbStrength.Location = new System.Drawing.Point(221, 262);
             this.pbStrength.Name = "pbStrength";
-            this.pbStrength.Size = new System.Drawing.Size(191, 23);
+            this.pbStrength.Size = new System.Drawing.Size(191, 10);
             this.pbStrength.TabIndex = 14;
             // 
             // frmDashboard
