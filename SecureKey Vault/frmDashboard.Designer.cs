@@ -188,6 +188,7 @@
             this.btnChangeMasterKey.TabIndex = 4;
             this.btnChangeMasterKey.Text = "Update Master Key";
             this.btnChangeMasterKey.UseVisualStyleBackColor = true;
+            this.btnChangeMasterKey.Click += new System.EventHandler(this.btnChangeMasterKey_Click);
             // 
             // frmDashboard
             // 
@@ -207,6 +208,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmDashboard";
             this.Text = "SecureKey Vault - Dashboard";
+            this.Load += new System.EventHandler(this.frmDashboard_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
