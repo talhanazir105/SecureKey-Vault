@@ -45,6 +45,7 @@
             this.txtNewKey = new System.Windows.Forms.TextBox();
             this.btnChangeMasterKey = new System.Windows.Forms.Button();
             this.btnShowPassword = new System.Windows.Forms.Button();
+            this.btnRead = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,7 +100,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(162, 297);
+            this.btnSave.Location = new System.Drawing.Point(69, 297);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(135, 35);
             this.btnSave.TabIndex = 6;
@@ -109,7 +110,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(303, 297);
+            this.btnDelete.Location = new System.Drawing.Point(315, 297);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(97, 35);
             this.btnDelete.TabIndex = 7;
@@ -119,7 +120,7 @@
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(162, 338);
+            this.btnGenerate.Location = new System.Drawing.Point(136, 338);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(343, 35);
             this.btnGenerate.TabIndex = 8;
@@ -128,7 +129,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(406, 297);
+            this.btnUpdate.Location = new System.Drawing.Point(418, 297);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(99, 35);
             this.btnUpdate.TabIndex = 9;
@@ -203,11 +204,21 @@
             this.btnShowPassword.UseVisualStyleBackColor = true;
             this.btnShowPassword.Click += new System.EventHandler(this.btnShowPassword_Click);
             // 
+            // btnRead
+            // 
+            this.btnRead.Location = new System.Drawing.Point(210, 297);
+            this.btnRead.Name = "btnRead";
+            this.btnRead.Size = new System.Drawing.Size(99, 35);
+            this.btnRead.TabIndex = 12;
+            this.btnRead.Text = "Read/View";
+            this.btnRead.UseVisualStyleBackColor = true;
+            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRead);
             this.Controls.Add(this.btnShowPassword);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnUpdate);
@@ -249,5 +260,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtCurrentKey;
         private System.Windows.Forms.Button btnShowPassword;
+        private System.Windows.Forms.Button btnRead;
     }
 }
