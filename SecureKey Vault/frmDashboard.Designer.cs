@@ -113,7 +113,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(315, 297);
+            this.btnDelete.Location = new System.Drawing.Point(330, 297);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(97, 35);
             this.btnDelete.TabIndex = 7;
@@ -132,12 +132,13 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(418, 297);
+            this.btnUpdate.Location = new System.Drawing.Point(433, 297);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(99, 35);
             this.btnUpdate.TabIndex = 9;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // groupBox1
             // 
@@ -211,10 +212,11 @@
             // 
             this.btnRead.Location = new System.Drawing.Point(210, 297);
             this.btnRead.Name = "btnRead";
-            this.btnRead.Size = new System.Drawing.Size(99, 35);
+            this.btnRead.Size = new System.Drawing.Size(114, 35);
             this.btnRead.TabIndex = 12;
             this.btnRead.Text = "Read/View";
             this.btnRead.UseVisualStyleBackColor = true;
+            this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
             // 
             // lblStrengthText
             // 

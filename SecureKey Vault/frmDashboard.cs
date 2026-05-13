@@ -21,7 +21,9 @@ namespace SecureKey_Vault
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            // Naya Vault form banane aur kholne ke liye
+            frmVault objVault = new frmVault();
+            objVault.ShowDialog(); // ShowDialog ka matlab hai jab tak ye khula hai, dashboard peeche block rahega
         }
 
         private void frmDashboard_Load(object sender, EventArgs e)
@@ -203,6 +205,20 @@ namespace SecureKey_Vault
                 lblStrengthText.Text = "Strong";
                 lblStrengthText.ForeColor = System.Drawing.Color.Green;
             }
+        }
+
+        private void btnRead_Click(object sender, EventArgs e)
+        {
+            // Naya Vault form banane aur kholne ke liye
+            frmVault objVault = new frmVault();
+            objVault.ShowDialog(); // ShowDialog ka matlab hai jab tak ye khula hai, dashboard peeche block rahega
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            // Naya Vault form banane aur kholne ke liye
+            frmVault objVault = new frmVault();
+            objVault.ShowDialog(); // ShowDialog ka matlab hai jab tak ye khula hai, dashboard peeche block rahega
         }
     }
 }
