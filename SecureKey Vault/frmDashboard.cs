@@ -220,5 +220,28 @@ namespace SecureKey_Vault
             frmVault objVault = new frmVault();
             objVault.ShowDialog(); // ShowDialog ka matlab hai jab tak ye khula hai, dashboard peeche block rahega
         }
+
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+            // Password banane ke liye zaroori haroof (Chotay bare letters, numbers, aur symbols)
+            string validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*";
+            string newPassword = "";
+
+            // Random number generate karne wala tool
+            Random rnd = new Random();
+
+            // 12 haroof (characters) ka password banana
+            for (int i = 0; i < 12; i++)
+            {
+                int index = rnd.Next(validChars.Length);
+                newPassword += validChars[index];
+            }
+
+            // Banaya hua password seedha Password wale dabbe (txtPassword) me daal do
+            txtPassword.Text = newPassword;
+
+            // Password ko automatically show kar do taake user usay parh sakay
+            txtPassword.PasswordChar = '\0';
+        }
     }
 }

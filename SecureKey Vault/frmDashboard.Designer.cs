@@ -129,6 +129,7 @@
             this.btnGenerate.TabIndex = 8;
             this.btnGenerate.Text = "Generate Strong Password";
             this.btnGenerate.UseVisualStyleBackColor = true;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
             // btnUpdate
             // 
