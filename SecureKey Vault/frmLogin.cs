@@ -20,40 +20,39 @@ namespace SecureKey_Vault
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            // Aapki copy ki hui connection string
+            
             string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SecureKeyVaultDB;Integrated Security=True";
 
-            // Check karte hain ke textbox khali to nahi
+            
             if (string.IsNullOrEmpty(txtMasterKey.Text))
             {
                 MessageBox.Show("Please enter your Master Key!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Database se connection banana
+            
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 try
                 {
                     con.Open();
 
-                    // Database me check karna ke ye master key App_User table me hai ya nahi
+                    
                     string query = "SELECT COUNT(*) FROM App_User WHERE Master_Key = @key";
 
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@key", txtMasterKey.Text);
-                        int count = (int)cmd.ExecuteScalar(); // Ye count karega ke kitne match hue
+                        int count = (int)cmd.ExecuteScalar(); 
 
                         if (count > 0)
                         {
                             MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            // Naya naam frmDashboard use karein
                             frmDashboard dashboard = new frmDashboard();
                             dashboard.Show();
 
-                            // Login form ko hide kar dein
+                            
                             this.Hide();
                         }
                         else
@@ -64,12 +63,21 @@ namespace SecureKey_Vault
                 }
                 catch (Exception ex)
                 {
-                    // Agar database connect hone me koi masla aaye to error dikhaye
+                    
                     MessageBox.Show("Database Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
-        
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            base.OnFormClosed(e);
+            Application.Exit();
+    }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

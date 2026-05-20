@@ -32,6 +32,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>cyber-security.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -58,6 +62,12 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSecurityCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSecurityCheck.Designer.cs">
+      <DependentUpon>frmSecurityCheck.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVault.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +82,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSecurityCheck.resx">
+      <DependentUpon>frmSecurityCheck.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVault.resx">
       <DependentUpon>frmVault.cs</DependentUpon>
@@ -97,6 +110,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cyber-security.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

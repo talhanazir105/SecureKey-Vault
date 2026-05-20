@@ -14,7 +14,6 @@ namespace SecureKey_Vault
 {
     public partial class frmVault : Form
     {
-        // Connection string (isay apne computer ke mutabiq check kar lein agar error aaye)
         string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SecureKeyVaultDB;Integrated Security=True";
 
         public int RecordID = 0;
@@ -24,7 +23,7 @@ namespace SecureKey_Vault
             InitializeComponent();
         }
 
-        // Function: Database se data la kar table me masked password ke sath dikhana
+        
         private void LoadAllData()
         {
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -32,15 +31,15 @@ namespace SecureKey_Vault
                 try
                 {
                     con.Open();
-                    // Hum query mein hi '********' mangwa rahe hain security ke liye
-                    string query = "SELECT ID, PlatformName, Username, '********' AS Password FROM Vault_Data";
+                    string query = "SELECT ROW_NUMBER() OVER (ORDER BY ID) AS [Sr. No], ID, PlatformName, Username, '********' AS Password FROM Vault_Data";
 
                     SqlDataAdapter sda = new SqlDataAdapter(query, con);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
 
-                    // Grid me data show karna
                     dgvVault.DataSource = dt;
+
+                    dgvVault.Columns["ID"].Visible = false;
                 }
                 catch (Exception ex)
                 {
@@ -51,7 +50,7 @@ namespace SecureKey_Vault
 
         private void frmVault_Load(object sender, EventArgs e)
         {
-            LoadAllData(); // Form open hoty hi table bhar jaye ga
+            LoadAllData(); 
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -61,15 +60,12 @@ namespace SecureKey_Vault
 
         private void dgvVault_SelectionChanged(object sender, EventArgs e)
         {
-            // Jab bhi table me selection change ho
             if (dgvVault.SelectedRows.Count > 0)
             {
-                // Selected row se ID aur details nikalna
                 int selectedId = Convert.ToInt32(dgvVault.SelectedRows[0].Cells["ID"].Value);
                 txtEditPlatform.Text = dgvVault.SelectedRows[0].Cells["PlatformName"].Value.ToString();
                 txtEditUsername.Text = dgvVault.SelectedRows[0].Cells["Username"].Value.ToString();
 
-                // Ab asal password database se decrypt karke layein gy
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
@@ -81,30 +77,27 @@ namespace SecureKey_Vault
 
                         if (result != null)
                         {
-                            // SecurityHelper use karke decrypt karna
                             string encryptedPwd = result.ToString();
                             txtEditPassword.Text = SecurityHelper.DecryptBase64(encryptedPwd);
                         }
                     }
                 }
 
-                // Default password chupa hua aye (*) niche walay daby me
                 txtEditPassword.PasswordChar = '*';
             }
         }
 
         private void btnShowEditPwd_Click(object sender, EventArgs e)
         {
-            // Password show ya hide karne ki logic
             if (txtEditPassword.PasswordChar == '*')
             {
-                txtEditPassword.PasswordChar = '\0'; // Show password
-                btnShowEditPwd.Text = "🙈"; // Icon change (khali eye se band ankhen emoji)
+                txtEditPassword.PasswordChar = '\0'; 
+                btnShowEditPwd.Text = "🙈";
             }
             else
             {
-                txtEditPassword.PasswordChar = '*'; // Hide password
-                btnShowEditPwd.Text = "👁️"; // Icon back to normal eye
+                txtEditPassword.PasswordChar = '*'; 
+                btnShowEditPwd.Text = "👁️"; 
             }
         }
 
@@ -112,7 +105,7 @@ namespace SecureKey_Vault
         {
             if (dgvVault.SelectedRows.Count > 0)
             {
-                // Check ke koi dabba khali na ho
+               
                 if (string.IsNullOrEmpty(txtEditPlatform.Text) || string.IsNullOrEmpty(txtEditPassword.Text))
                 {
                     MessageBox.Show("Platform and Password are required!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -121,7 +114,7 @@ namespace SecureKey_Vault
 
                 int selectedId = Convert.ToInt32(dgvVault.SelectedRows[0].Cells["ID"].Value);
 
-                // Naya password wapas encrypt karna
+                
                 string newEncryptedPwd = SecurityHelper.EncryptBase64(txtEditPassword.Text);
 
                 using (SqlConnection con = new SqlConnection(connectionString))
@@ -140,7 +133,7 @@ namespace SecureKey_Vault
                             cmd.ExecuteNonQuery();
                             MessageBox.Show("Record Updated Securely!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            LoadAllData(); // Table refresh karna
+                            LoadAllData(); 
                         }
                     }
                     catch (Exception ex)
@@ -158,7 +151,6 @@ namespace SecureKey_Vault
                 int selectedId = Convert.ToInt32(dgvVault.SelectedRows[0].Cells["ID"].Value);
                 string platformName = dgvVault.SelectedRows[0].Cells["PlatformName"].Value.ToString();
 
-                // Confirm karna
                 DialogResult dialog = MessageBox.Show($"Are you sure you want to permanently delete {platformName}?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (dialog == DialogResult.Yes)
@@ -174,16 +166,22 @@ namespace SecureKey_Vault
 
                             MessageBox.Show("Record Deleted!", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            // Dabbe khali karna
+                            
                             txtEditPlatform.Clear();
                             txtEditUsername.Clear();
                             txtEditPassword.Clear();
 
-                            LoadAllData(); // Table refresh karna
+                            LoadAllData(); 
                         }
                     }
                 }
             }
+        }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            base.OnFormClosed(e);
+            Application.Exit();
         }
     }
 }
