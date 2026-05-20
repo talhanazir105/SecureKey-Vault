@@ -39,7 +39,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(69, 116);
+            this.label1.Location = new System.Drawing.Point(162, 166);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(148, 25);
             this.label1.TabIndex = 0;
@@ -48,7 +48,7 @@
             // txtMasterKey
             // 
             this.txtMasterKey.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMasterKey.Location = new System.Drawing.Point(245, 113);
+            this.txtMasterKey.Location = new System.Drawing.Point(316, 163);
             this.txtMasterKey.Name = "txtMasterKey";
             this.txtMasterKey.PasswordChar = '*';
             this.txtMasterKey.Size = new System.Drawing.Size(188, 31);
@@ -61,7 +61,7 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnLogin.Location = new System.Drawing.Point(268, 236);
+            this.btnLogin.Location = new System.Drawing.Point(355, 232);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(118, 35);
             this.btnLogin.TabIndex = 2;

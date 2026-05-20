@@ -38,7 +38,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(149, 186);
+            this.label1.Location = new System.Drawing.Point(200, 197);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(200, 25);
             this.label1.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             // txtSecretPin
             // 
-            this.txtSecretPin.Location = new System.Drawing.Point(358, 182);
+            this.txtSecretPin.Location = new System.Drawing.Point(409, 193);
             this.txtSecretPin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSecretPin.Name = "txtSecretPin";
             this.txtSecretPin.PasswordChar = '*';
@@ -55,15 +55,15 @@
             // 
             // btnVerifyPin
             // 
-            this.btnVerifyPin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.btnVerifyPin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnVerifyPin.FlatAppearance.BorderSize = 0;
             this.btnVerifyPin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerifyPin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerifyPin.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnVerifyPin.Location = new System.Drawing.Point(317, 292);
+            this.btnVerifyPin.Location = new System.Drawing.Point(431, 258);
             this.btnVerifyPin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnVerifyPin.Name = "btnVerifyPin";
-            this.btnVerifyPin.Size = new System.Drawing.Size(169, 46);
+            this.btnVerifyPin.Size = new System.Drawing.Size(139, 42);
             this.btnVerifyPin.TabIndex = 2;
             this.btnVerifyPin.Text = "Verify";
             this.btnVerifyPin.UseVisualStyleBackColor = false;

@@ -108,12 +108,12 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.btnSave.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSave.Location = new System.Drawing.Point(97, 371);
+            this.btnSave.Location = new System.Drawing.Point(167, 371);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(165, 44);
@@ -124,12 +124,12 @@
             // 
             // btnGenerate
             // 
-            this.btnGenerate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.btnGenerate.BackColor = System.Drawing.Color.Green;
             this.btnGenerate.FlatAppearance.BorderSize = 0;
             this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnGenerate.Location = new System.Drawing.Point(166, 422);
+            this.btnGenerate.Location = new System.Drawing.Point(167, 434);
             this.btnGenerate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(419, 44);
@@ -157,7 +157,7 @@
             // 
             // btnChangeMasterKey
             // 
-            this.btnChangeMasterKey.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.btnChangeMasterKey.BackColor = System.Drawing.Color.Green;
             this.btnChangeMasterKey.FlatAppearance.BorderSize = 0;
             this.btnChangeMasterKey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangeMasterKey.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -223,12 +223,12 @@
             // 
             // btnRead
             // 
-            this.btnRead.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.btnRead.BackColor = System.Drawing.Color.SlateGray;
             this.btnRead.FlatAppearance.BorderSize = 0;
             this.btnRead.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRead.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRead.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnRead.Location = new System.Drawing.Point(481, 371);
+            this.btnRead.Location = new System.Drawing.Point(445, 370);
             this.btnRead.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(140, 44);
