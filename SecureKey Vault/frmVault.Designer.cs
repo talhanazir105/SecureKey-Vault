@@ -62,7 +62,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -76,7 +76,7 @@
             this.dgvVault.RowHeadersWidth = 62;
             this.dgvVault.RowTemplate.Height = 28;
             this.dgvVault.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVault.Size = new System.Drawing.Size(978, 420);
+            this.dgvVault.Size = new System.Drawing.Size(1008, 420);
             this.dgvVault.TabIndex = 0;
             this.dgvVault.SelectionChanged += new System.EventHandler(this.dgvVault_SelectionChanged);
             // 
@@ -141,7 +141,7 @@
             this.btnShowEditPwd.Location = new System.Drawing.Point(956, 495);
             this.btnShowEditPwd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnShowEditPwd.Name = "btnShowEditPwd";
-            this.btnShowEditPwd.Size = new System.Drawing.Size(36, 34);
+            this.btnShowEditPwd.Size = new System.Drawing.Size(46, 31);
             this.btnShowEditPwd.TabIndex = 7;
             this.btnShowEditPwd.Text = "👁️";
             this.btnShowEditPwd.UseVisualStyleBackColor = true;
@@ -182,7 +182,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
-            this.ClientSize = new System.Drawing.Size(1004, 633);
+            this.ClientSize = new System.Drawing.Size(1034, 633);
             this.Controls.Add(this.btnVaultDelete);
             this.Controls.Add(this.btnVaultUpdate);
             this.Controls.Add(this.btnShowEditPwd);

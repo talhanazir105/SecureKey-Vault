@@ -59,6 +59,7 @@
             this.label1.Size = new System.Drawing.Size(146, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Platform Name:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtPlatform
             // 
@@ -77,6 +78,7 @@
             this.label2.Size = new System.Drawing.Size(156, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Username/Email:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtUsername
             // 
@@ -95,6 +97,7 @@
             this.label3.Size = new System.Drawing.Size(97, 25);
             this.label3.TabIndex = 4;
             this.label3.Text = "Password:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtPassword
             // 
@@ -145,6 +148,7 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtCurrentKey);
             this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox1.Location = new System.Drawing.Point(658, 145);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -215,7 +219,7 @@
             this.btnShowPassword.Location = new System.Drawing.Point(510, 276);
             this.btnShowPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnShowPassword.Name = "btnShowPassword";
-            this.btnShowPassword.Size = new System.Drawing.Size(44, 36);
+            this.btnShowPassword.Size = new System.Drawing.Size(57, 31);
             this.btnShowPassword.TabIndex = 11;
             this.btnShowPassword.Text = "👁️";
             this.btnShowPassword.UseVisualStyleBackColor = true;
@@ -257,8 +261,7 @@
             // 
             // frmDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(978, 562);
             this.Controls.Add(this.pbStrength);
@@ -275,6 +278,7 @@
             this.Controls.Add(this.txtPlatform);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
